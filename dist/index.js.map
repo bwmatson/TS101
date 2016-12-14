@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["index.js"],"sourcesContent":["function hello(compiler) {\n    console.log('Hello from ' + compiler);\n}\nhello('TypeScript 2');\n"],"file":"index.js"}
