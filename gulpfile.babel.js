@@ -1,21 +1,21 @@
-var gulp = require('gulp');
-var ts = require('gulp-typescript');
-var tsProject = ts.createProject('tsconfig.json');
-var sourcemaps = require('gulp-sourcemaps');
-var tslint = require('gulp-tslint');
-var run = require('gulp-run');
-var gutil = require('gulp-util');
+import gulp from 'gulp';
+import ts from 'gulp-typescript';
+const tsProject = ts.createProject('tsconfig.json');
+import sourcemaps from 'gulp-sourcemaps';
+import tslint from 'gulp-tslint';
+import run from 'gulp-run';
+import gutil from 'gulp-util';
 
-var paths = {
+const paths = {
     pages: ['src/*.html']
 };
 
-gulp.task('copy-html', function () {
+gulp.task('copy-html', () => {
     return gulp.src(paths.pages)
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('compilets', function() {
+gulp.task('compilets', () => {
     return tsProject.src()
         /*
         .pipe(tslint({
@@ -32,28 +32,24 @@ gulp.task('compilets', function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('exects', function() {
+gulp.task('exects', () => {
     return run('echo Typescript Output: && node ./dist/index.js').exec();
 });
 
-gulp.task('streamts', function () {
+gulp.task('streamts', () => {
     return gulp.watch('src/**/*.ts', gulp.series('compilets', 'exects'));
 });
 
-gulp.task('start-streamts', function() {
-    return gulp.series('copy-html', 'compilets', 'exects', 'streamts')();
-});
+gulp.task('start-streamts', gulp.series('copy-html', 'compilets', 'exects', 'streamts'));
 
-gulp.task('execjs', function() {
+gulp.task('execjs', () => {
     return run('echo Javascript Output: && node ./dist/example.js').exec();
 });
 
-gulp.task('streamjs', function () {
+gulp.task('streamjs', () => {
     return gulp.watch('dist/**/*.js', gulp.series('execjs'));
 });
 
-gulp.task('start-streamjs', function() {
-    return gulp.series('execjs', 'streamjs')();
-});
+gulp.task('start-streamjs', gulp.series('execjs', 'streamjs'));
 
 gulp.task('default', gulp.series('copy-html', 'compilets', 'exects'));

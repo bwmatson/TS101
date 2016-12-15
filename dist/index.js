@@ -1,6 +1,5 @@
 function hello(compiler) {
-    console.log('Hello from ' + compiler);
+    var bob = 'Bob!';
+    console.log('Hello from ' + compiler + bob);
 }
 hello('TypeScript 2');
-
-//# sourceMappingURL=index.js.map
