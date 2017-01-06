@@ -1,12 +1,14 @@
-{
-    "filesGlob": [
-        "./**/*.ts"
-    ],
+{    
+    "compileOnSave": true,
     "compilerOptions": {
+        "alwaysStrict": true,
         "module": "commonjs",
-        "target": "es5",
+        "noEmitOnError": true,
         "noImplicitAny": true,
         "sourceMap": true,
-        "noEmitOnError": true
-    }
+        "target": "es5"  
+    },
+    "include": [
+        "src/**/*"
+    ]
 }

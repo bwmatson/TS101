@@ -1,4 +1,5 @@
 {
+    "extends": "tslint:latest",
     "jsRules": {
         "class-name": true,
         "comment-format": [
@@ -8,6 +9,11 @@
         "indent": [
             true,
             "spaces"
+        ],
+        "no-console": [
+            false, 
+            "log", 
+            "error"
         ],
         "no-duplicate-variable": true,
         "no-eval": true,
@@ -20,7 +26,7 @@
         ],
         "quotemark": [
             true,
-            "single"
+            "double"
         ],
         "semicolon": [
             true,
@@ -53,6 +59,11 @@
             true,
             "spaces"
         ],
+        "no-console": [
+            false, 
+            "log", 
+            "error"
+        ],
         "no-eval": true,
         "no-internal-module": true,
         "no-trailing-whitespace": true,
@@ -65,7 +76,7 @@
         ],
         "quotemark": [
             true,
-            "single"
+            "double"
         ],
         "semicolon": [
             true,
@@ -96,6 +107,6 @@
             "check-operator",
             "check-separator",
             "check-type"
-        ]
+        ]        
     }
 }
