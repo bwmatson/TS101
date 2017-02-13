@@ -20,11 +20,11 @@ gulp.task("compilets", () => {
         .pipe(tsProject()).js
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest("src"));
+        .pipe(gulp.dest("./dist"));
 });
 
 gulp.task("exects", () => {
-    return run("echo Typescript Output: && node ./src/index.js").exec();
+    return run("echo Typescript Output: && node ./dist/index.js").exec();
 });
 
 gulp.task("streamts", () => {
