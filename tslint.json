@@ -59,6 +59,7 @@
             true,
             "spaces"
         ],
+        "max-classes-per-file": [false],
         "no-console": [
             false, 
             "log", 

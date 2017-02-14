@@ -2,6 +2,8 @@
     "compileOnSave": true,
     "compilerOptions": {
         "alwaysStrict": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "module": "commonjs",
         "noEmitOnError": true,
         "noImplicitAny": true,
