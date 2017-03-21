@@ -1,5 +1,4 @@
 
-
 function hello(compiler: string) {
     const bob: String = 'Bob!';
     console.log('Hello from ' + compiler + bob);
@@ -11,10 +10,11 @@ hello('TypeScript 2');
     *Uses the 'implements' key work and can accept an unlimited number of classes
     *   note: extends only allows the use of one class
 */
-import { applyMixins } from './mixins/applyMixins';
 import { Swimmer } from './mixins/Swimmer';
 import { Talker } from './mixins/Talker';
 import { Walker } from './mixins/Walker';
+
+import { applyMixins } from 'pathMap/applyMixins';
 
 class Duck implements Swimmer, Talker, Walker {
 
@@ -38,7 +38,6 @@ class Duck implements Swimmer, Talker, Walker {
 applyMixins(Duck, [Swimmer, Talker, Walker]);
 // Uncomment to Run Example
 // const duck = new Duck();
-
 
 /* Decorator Example
     * A Decorator is a special kind of declaration that can be attached to a:

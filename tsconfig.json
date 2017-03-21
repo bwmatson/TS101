@@ -7,6 +7,10 @@
         "module": "commonjs",
         "noEmitOnError": true,
         "noImplicitAny": true,
+        "baseUrl": ".", // This must be specified if "paths" is.
+        "paths": {
+            "pathMap/*" : ["./src/mixins/*"]
+        },
         "sourceMap": true,
         "target": "es5"  
     },
