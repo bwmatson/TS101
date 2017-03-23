@@ -1,9 +1,57 @@
-
+import { RsaPublicKey } from 'crypto';
+/* Function Example
+*/
 function hello(compiler: string) {
-    const bob: String = 'Bob!';
+    const bob: string = 'Bob!';
     console.log('Hello from ' + compiler + bob);
 }
 hello('TypeScript 2');
+
+/* Class Example
+*/
+class BasicClass {
+    // All Classess must have a constructor
+    constructor() {
+        console.log('Basic Class');
+    }
+
+    public BasicMethod() {
+        console.log('Basic Method');
+    };
+}
+// Uncomment to Run Example
+// const BasicClassExample = new BasicClass();
+// BasicClassExample.BasicMethod();
+
+/* Extend Example
+*/
+class ExtendedClass extends BasicClass {
+    constructor() {
+        super();
+        console.log('Extended Class');
+    }
+}
+// Uncomment to Run Example
+// const ExtendedClassExample = new ExtendedClass();
+
+/* Interface Example
+*/
+interface IPetKiller {
+    namedSaul: boolean;
+    killedCat: boolean;
+}
+
+class Investigation implements IPetKiller {
+    public namedSaul = true;
+    public killedCat = true;
+    constructor() {
+        if (this.namedSaul && this.killedCat){
+            console.log('Saul killed the cat');
+        }
+    }
+}
+// Uncomment to Run Example
+// const InvestigationExample = new Investigation();
 
 /* Mixins Example
     *Allows for classes to be broken down into small pieces and mixed and matched as needed.
@@ -14,7 +62,7 @@ import { Swimmer } from './mixins/Swimmer';
 import { Talker } from './mixins/Talker';
 import { Walker } from './mixins/Walker';
 
-import { applyMixins } from 'pathMap/applyMixins';
+import { applyMixins } from './mixins/applyMixins';
 
 class Duck implements Swimmer, Talker, Walker {
 
@@ -81,5 +129,6 @@ class DecoratorExample {
 
     // Uncomment to Run Example
     // @logMethodName
+    // tslint:disable-next-line:no-empty
     public method() {}
 }
